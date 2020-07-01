@@ -1,0 +1,23 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "WeatherApp written in Vanilla JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss --output css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piotrxyz/WeatherApp.git"
+  },
+  "author": "Piotr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piotrxyz/WeatherApp/issues"
+  },
+  "homepage": "https://github.com/piotrxyz/WeatherApp#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
