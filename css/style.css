@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: linear-gradient(to left, #56ccf2, #2f80ed);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+
+.location {
+  display: flex; }
+  .location__icon {
+    margin-left: 20px;
+    font-size: 30px; }
+
+.location,
+.weather {
+  width: 200px; }
+
+.weather {
+  margin: 0; }
+  .weather__degree {
+    font-size: 30px; }
+  .weather__description {
+    font-family: 'Poppins', sans-serif; }
