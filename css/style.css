@@ -11,14 +11,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh; }
 
+.title {
+  margin-top: 20%; }
+
+.banner {
+  margin-top: 30px; }
+
+button {
+  cursor: pointer; }
+
+input {
+  -webkit-appearance: none; }
+
+button,
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit; }
+
 .location {
-  display: flex; }
-  .location__icon {
-    margin-left: 20px;
-    font-size: 30px; }
+  display: flex;
+  margin-top: 20px; }
+  .location__name {
+    font-size: 20px; }
+  .location__degree {
+    font-size: 20px;
+    margin-left: 20px; }
 
 .location,
 .weather {

@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
   let long;
   let lat;
   let weatherDescription = document.querySelector('.weather__description');
-  let weatherDegree = document.querySelector('.weather__degree');
+  let weatherDegree = document.querySelector('.location__degree');
   let locationName = document.querySelector('.location__name');
 
   if (navigator.geolocation) {
