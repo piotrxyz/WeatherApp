@@ -14,7 +14,7 @@ body {
   height: 100vh; }
 
 .title {
-  margin-top: 20%; }
+  margin-top: 10%; }
 
 .banner {
   margin-top: 30px; }
@@ -33,13 +33,11 @@ input {
   color: inherit; }
 
 .location {
-  display: flex;
   margin-top: 20px; }
   .location__name {
-    font-size: 20px; }
+    font-size: 15px; }
   .location__degree {
-    font-size: 20px;
-    margin-left: 20px; }
+    font-size: 30px; }
 
 .location,
 .weather {
@@ -50,4 +48,5 @@ input {
   .weather__degree {
     font-size: 30px; }
   .weather__description {
-    font-family: 'Poppins', sans-serif; }
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase; }

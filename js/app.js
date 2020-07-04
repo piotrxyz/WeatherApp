@@ -1,6 +1,7 @@
+const api_key = '2ef5bd8ccaf308e15a25ffe2f7d1c326';
+
 window.addEventListener('load', () => {
-  let long;
-  let lat;
+
   let weatherDescription = document.querySelector('.weather__description');
   let weatherDegree = document.querySelector('.location__degree');
   let locationName = document.querySelector('.location__name');
@@ -9,9 +10,9 @@ window.addEventListener('load', () => {
     navigator.geolocation.getCurrentPosition(position => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
-      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=2ef5bd8ccaf308e15a25ffe2f7d1c326`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api_key}`;
 
-      fetch(api)
+      fetch(url)
         .then(response => {
           return response.json();
         })
@@ -28,7 +29,7 @@ window.addEventListener('load', () => {
 
           // Set DOM Elements from the API
 
-          weatherDegree.innerHTML = temp + '&deg;';
+          weatherDegree.innerHTML = temp + '&deg;C';
           weatherDescription.textContent = description;
           locationName.textContent = data.name;
         });

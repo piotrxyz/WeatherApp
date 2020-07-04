@@ -17,7 +17,7 @@ body {
 }
 
 .title {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .banner {
@@ -41,16 +41,14 @@ input {
 }
 
 .location {
-  display: flex;
   margin-top: 20px;
 
   &__name {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   &__degree {
-    font-size: 20px;
-    margin-left: 20px;
+    font-size: 30px;
   }
 }
 
@@ -68,5 +66,6 @@ input {
 
   &__description {
     font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
   }
 }
