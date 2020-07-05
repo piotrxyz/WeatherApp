@@ -19,34 +19,26 @@ body {
 .banner {
   margin-top: 30px; }
 
-button {
-  cursor: pointer; }
-
-input {
-  -webkit-appearance: none; }
-
-button,
-input {
-  border: none;
-  background: none;
-  outline: none;
-  color: inherit; }
-
 .location {
-  margin-top: 20px; }
+  margin-top: 20px;
+  background: transparent;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .location__set {
+    display: flex;
+    justify-content: space-around; }
   .location__name {
     font-size: 15px; }
   .location__degree {
-    font-size: 30px; }
-
-.location,
-.weather {
-  width: 200px; }
-
-.weather {
-  margin: 0; }
-  .weather__degree {
-    font-size: 30px; }
-  .weather__description {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 40px; }
+  .location__description {
     font-family: 'Poppins', sans-serif;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    padding-top: 10px; }

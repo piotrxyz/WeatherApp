@@ -2,8 +2,8 @@ const api_key = '2ef5bd8ccaf308e15a25ffe2f7d1c326';
 
 window.addEventListener('load', () => {
 
-  let weatherDescription = document.querySelector('.weather__description');
-  let weatherDegree = document.querySelector('.location__degree');
+  let locationDescription = document.querySelector('.location__description');
+  let locationDegree = document.querySelector('.location__degree');
   let locationName = document.querySelector('.location__name');
 
   if (navigator.geolocation) {
@@ -29,8 +29,8 @@ window.addEventListener('load', () => {
 
           // Set DOM Elements from the API
 
-          weatherDegree.innerHTML = temp + '&deg;C';
-          weatherDescription.textContent = description;
+          locationDegree.innerHTML = temp + '&deg;C';
+          locationDescription.textContent = description;
           locationName.textContent = data.name;
         });
     });
