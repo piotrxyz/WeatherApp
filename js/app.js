@@ -26,13 +26,27 @@ window.addEventListener('load', () => {
 
 
           const description = data.weather[0].description;
+          const icon = data.weather[0].icon;
+          console.log(data.weather[0].icon);
 
           // Set DOM Elements from the API
 
           locationDegree.innerHTML = temp + '&deg;C';
           locationDescription.textContent = description;
           locationName.textContent = data.name;
+
+          // Set icon
+          setIcons(icon, document.querySelector('.location__icon'));
+
         });
     });
+  }
+
+  function setIcons(icon, iconID) {
+    const skycons = new Skycons({ color: "white" });
+    // const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+    const currentIcon = icon;
+    skycons.play();
+    return skycons.set(iconID, Skycons[currentIcon]);
   }
 });
