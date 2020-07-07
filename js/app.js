@@ -35,18 +35,7 @@ window.addEventListener('load', () => {
           locationDescription.textContent = description;
           locationName.textContent = data.name;
 
-          // Set icon
-          setIcons(icon, document.querySelector('.location__icon'));
-
         });
     });
-  }
-
-  function setIcons(icon, iconID) {
-    const skycons = new Skycons({ color: "white" });
-    // const currentIcon = icon.replace(/-/g, "_").toUpperCase();
-    const currentIcon = icon;
-    skycons.play();
-    return skycons.set(iconID, Skycons[currentIcon]);
   }
 });
