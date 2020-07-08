@@ -27,7 +27,7 @@ body {
 .location {
   margin-top: 20px;
   background: transparent;
-  width: 600px;
+  width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -40,6 +40,8 @@ body {
 
   &__name {
     font-size: 15px;
+    display: flex;
+    align-items: center;
   }
 
   &__icon {
