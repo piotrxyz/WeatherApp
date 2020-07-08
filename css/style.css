@@ -32,6 +32,9 @@ body {
     justify-content: space-around; }
   .location__name {
     font-size: 15px; }
+  .location__icon {
+    width: 50px;
+    height: 50px; }
   .location__degree {
     font-size: 30px;
     text-align: center;
