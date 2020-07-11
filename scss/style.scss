@@ -7,17 +7,48 @@
 }
 
 body {
+  height: 100%;
   background: linear-gradient(to left, #56ccf2, #2f80ed);
+}
+
+.app {
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-}
 
-.title {
-  margin-top: 10%;
+  &__title {
+    margin-top: 10%;
+  }
+
+  &__form {
+    padding-top: 30px;
+  }
+
+  &__input {
+    border: transparent;
+    height: 25px;
+    outline: transparent;
+    border-radius: 5px;
+  }
+
+  &__button {
+    background: rgba(100, 95, 95, 0.774);
+    border: transparent;
+    height: 25px;
+    width: 50px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: all .3s;
+
+    &:hover {
+      color: rgba(100, 95, 95, 0.774);
+      background: white;
+    }
+  }
 }
 
 .banner {
@@ -25,13 +56,17 @@ body {
 }
 
 .location {
-  margin-top: 20px;
+  margin-top: 130px;
   background: transparent;
   width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  &__title {
+    text-align: center;
+  }
 
   &__set {
     display: flex;
