@@ -7,6 +7,7 @@ window.addEventListener("load", () => {
   let locationDescription = document.querySelector(".location__description");
   let locationDegree = document.querySelector(".location__degree");
   let locationName = document.querySelector(".location__name");
+  let title = document.querySelector(".location__title");
   const setIcon = document.querySelector(".location__icon");
 
   if (navigator.geolocation) {
@@ -35,6 +36,8 @@ window.addEventListener("load", () => {
           setIcon.src = icon;
         });
     });
+  }else {
+    title.textContent = "You have to accept geolocation to see current weather in your location";
   }
 });
 
