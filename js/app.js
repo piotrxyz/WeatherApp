@@ -23,17 +23,14 @@ window.addEventListener("load", () => {
           console.log(data);
           // show data in dev tools
           const { weather, name, main } = data;
-          const description = weather[0].description;
-          // converting Kelvin to Celcius
-          const temp = Math.round(parseFloat(main.temp) - 273.15);
-          
+
           // which icons?
           // const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
           const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
 
           // Set DOM Elements from the API
-          locationDegree.innerHTML = temp + '&deg;C';
-          locationDescription.textContent = description;
+          locationDegree.innerHTML = Math.round(parseFloat(main.temp) - 273.15) + '&deg;C'; // converting Kelvin to Celcius
+          locationDescription.textContent = weather[0].description;
           locationName.textContent = name;
           setIcon.src = icon;
         });
@@ -45,7 +42,7 @@ window.addEventListener("load", () => {
 
 const form = document.querySelector(".app__form");
 const input = document.querySelector(".app__input");
-const list = document.querySelector(".search-results .results");
+const list = document.querySelector(".search__results");
  
 form.addEventListener("submit", e => {
   e.preventDefault();
