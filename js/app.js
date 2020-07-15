@@ -1,11 +1,13 @@
-const api_key = '2ef5bd8ccaf308e15a25ffe2f7d1c326';
+// checking for weather using geolocation
 
-window.addEventListener('load', () => {
+const api_key = "2ef5bd8ccaf308e15a25ffe2f7d1c326";
 
-  let locationDescription = document.querySelector('.location__description');
-  let locationDegree = document.querySelector('.location__degree');
-  let locationName = document.querySelector('.location__name');
-  const setIcon = document.querySelector('.location__icon');
+window.addEventListener("load", () => {
+
+  let locationDescription = document.querySelector(".location__description");
+  let locationDegree = document.querySelector(".location__degree");
+  let locationName = document.querySelector(".location__name");
+  const setIcon = document.querySelector(".location__icon");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -19,12 +21,15 @@ window.addEventListener('load', () => {
         })
         .then(data => {
           console.log(data);
-
+          // show data in dev tools
+          const { weather, name, main } = data;
+          const description = weather[0].description;
           // converting Kelvin to Celcius
-          const temp = Math.round(parseFloat(data.main.temp) - 273.15);
-          const description = data.weather[0].description;
-          const { weather, name } = data;
-          const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+          const temp = Math.round(parseFloat(main.temp) - 273.15);
+          
+          // which icons?
+          // const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+          const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
 
           // Set DOM Elements from the API
           locationDegree.innerHTML = temp + '&deg;C';
@@ -34,4 +39,41 @@ window.addEventListener('load', () => {
         });
     });
   }
+});
+
+// checking for weather by input value (user search)
+
+const form = document.querySelector(".app__form");
+const input = document.querySelector(".app__input");
+const list = document.querySelector(".search-results .results");
+ 
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  let inputVal = input.value;
+
+  const url_search = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${api_key}&units=metric`;
+
+  fetch(url_search)
+    .then(response => response.json())
+    .then(data => {
+      const { main, name, sys, weather } = data;
+      const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
+      const li = document.createElement("li");
+      li.classList.add("city");
+      const result = `
+        <h2 data-name="${name},${sys.country}">
+          <span>${name}</span>
+          <sup>${sys.country}</sup>
+        </h2>
+        <div>${Math.round(main.temp)}<sup>°C</sup></div>
+        <figure>
+          <img src="${icon}" alt="${weather[0]["description"]}">
+          <figcaption>${weather[0]["description"]}</figcaption>
+        </figure>
+      `;
+      li.innerHTML = result;
+      list.appendChild(li);
+      form.reset();
+      input.focus();
+    })
 });

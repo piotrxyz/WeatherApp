@@ -5,7 +5,6 @@
   box-sizing: border-box; }
 
 body {
-  height: 100%;
   background: linear-gradient(to left, #283c86, #45a247); }
 
 .app {
@@ -71,3 +70,6 @@ body {
     display: block;
     text-align: center;
     padding-top: 10px; }
+
+.results {
+  list-style: none; }
