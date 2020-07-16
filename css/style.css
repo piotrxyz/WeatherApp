@@ -19,7 +19,7 @@ body:before {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url(/assets/background.jpg);
+  background-image: url(./assets/background.jpg);
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
@@ -43,7 +43,7 @@ body:before {
     height: 35px;
     padding-left: 4%; }
   .app__button {
-    background: url(/assets/lens.svg);
+    background: url(./assets/lens.svg);
     filter: invert(100%);
     border: transparent;
     background-repeat: no-repeat;
