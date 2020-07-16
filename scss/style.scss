@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
   margin: 0;
@@ -6,13 +7,32 @@
   box-sizing: border-box;
 }
 
-body {
-  background: linear-gradient(to left, #283c86, #45a247);
+*:focus {
+  outline: 1px dotted lightgray;
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/background.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  z-index: -1;
+}
+
 
 .app {
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,31 +43,32 @@ body {
 
   &__form {
     padding-top: 30px;
+    display: flex;
+    position: relative;
   }
 
   &__input {
     border: transparent;
-    height: 25px;
-    outline: transparent;
-    border-radius: 5px;
+    border-radius: 20px;
+    width: 300px;
+    height: 35px;
+    padding-left: 4%;
   }
 
   &__button {
-    background: rgba(100, 95, 95, 0.774);
+    background: url(/assets/lens.svg);
+    filter: invert(100%);
     border: transparent;
-    outline: transparent;
-    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
     width: 50px;
-    color: white;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 10px;
     transition: all .3s;
-
-    &:hover {
-      color: rgba(100, 95, 95, 0.774);
-      background: white;
-    }
+    position: absolute;
+    right: -10px;
+    bottom: -8px;
   }
 }
 
@@ -56,13 +77,16 @@ body {
 }
 
 .location {
-  margin-top: 130px;
+  margin-top: 20px;
   background: transparent;
   width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: rgba(22, 21, 21, 0.2);
+  padding: 10px;
+  border-radius: 5px;
 
   &__title {
     text-align: center;
@@ -80,8 +104,8 @@ body {
   }
 
   &__icon {
-    width: 50px;
     height: 50px;
+    filter: invert(1);
   }
 
   &__degree {
@@ -100,9 +124,23 @@ body {
 }
 
 .city {
-
+  padding: 10px;
+  background-color: rgba(22, 21, 21, 0.2);
+  margin: 25px 5px 0px 0px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.results {
-  list-style: none;
+.search {
+
+  &__results {
+    display: flex;
+    list-style: none;
+  }
+}
+
+img {
+  filter: invert(1);
 }

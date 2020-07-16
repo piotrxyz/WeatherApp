@@ -14,9 +14,9 @@ window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition(position => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api_key}`;
+      const main_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api_key}`;
 
-      fetch(url)
+      fetch(main_url)
         .then(response => {
           return response.json();
         })
@@ -36,8 +36,8 @@ window.addEventListener("load", () => {
           setIcon.src = icon;
         });
     });
-  }else {
-    title.textContent = "You have to accept geolocation to see current weather in your location";
+  } else{
+    title.textContent = "Accept geolocation to see current weather in your location";
   }
 });
 
@@ -51,9 +51,9 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   let inputVal = input.value;
 
-  const url_search = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${api_key}&units=metric`;
+  const search_url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${api_key}&units=metric`;
 
-  fetch(url_search)
+  fetch(search_url)
     .then(response => response.json())
     .then(data => {
       const { main, name, sys, weather } = data;

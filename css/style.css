@@ -1,53 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
+*:focus {
+  outline: 1px dotted lightgray; }
+
 body {
-  background: linear-gradient(to left, #283c86, #45a247); }
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh; }
+
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/background.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  z-index: -1; }
 
 .app {
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center; }
   .app__title {
     margin-top: 10%; }
   .app__form {
-    padding-top: 30px; }
+    padding-top: 30px;
+    display: flex;
+    position: relative; }
   .app__input {
     border: transparent;
-    height: 25px;
-    outline: transparent;
-    border-radius: 5px; }
+    border-radius: 20px;
+    width: 300px;
+    height: 35px;
+    padding-left: 4%; }
   .app__button {
-    background: rgba(100, 95, 95, 0.774);
+    background: url(/assets/lens.svg);
+    filter: invert(100%);
     border: transparent;
-    outline: transparent;
-    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
     width: 50px;
-    color: white;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 10px;
-    transition: all .3s; }
-    .app__button:hover {
-      color: rgba(100, 95, 95, 0.774);
-      background: white; }
+    transition: all .3s;
+    position: absolute;
+    right: -10px;
+    bottom: -8px; }
 
 .banner {
   margin-top: 30px; }
 
 .location {
-  margin-top: 130px;
+  margin-top: 20px;
   background: transparent;
   width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  background-color: rgba(22, 21, 21, 0.2);
+  padding: 10px;
+  border-radius: 5px; }
   .location__title {
     text-align: center; }
   .location__set {
@@ -58,8 +81,8 @@ body {
     display: flex;
     align-items: center; }
   .location__icon {
-    width: 50px;
-    height: 50px; }
+    height: 50px;
+    filter: invert(1); }
   .location__degree {
     font-size: 30px;
     text-align: center;
@@ -71,5 +94,18 @@ body {
     text-align: center;
     padding-top: 10px; }
 
-.results {
+.city {
+  padding: 10px;
+  background-color: rgba(22, 21, 21, 0.2);
+  margin: 25px 5px 0px 0px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.search__results {
+  display: flex;
   list-style: none; }
+
+img {
+  filter: invert(1); }
