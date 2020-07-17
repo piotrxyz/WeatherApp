@@ -70,6 +70,11 @@ body:before {
     right: -10px;
     bottom: -8px;
   }
+
+  &__message {
+    font-size: 10px;
+    margin-top: 8px;
+  }
 }
 
 .banner {
@@ -124,6 +129,8 @@ body:before {
 }
 
 .city {
+  width: 200px;
+  height: 250px;
   padding: 10px;
   background-color: rgba(22, 21, 21, 0.2);
   margin: 25px 5px 0px 0px;

@@ -56,6 +56,9 @@ body:before {
     position: absolute;
     right: -10px;
     bottom: -8px; }
+  .app__message {
+    font-size: 10px;
+    margin-top: 8px; }
 
 .banner {
   margin-top: 30px; }
@@ -95,6 +98,8 @@ body:before {
     padding-top: 10px; }
 
 .city {
+  width: 200px;
+  height: 250px;
   padding: 10px;
   background-color: rgba(22, 21, 21, 0.2);
   margin: 25px 5px 0px 0px;
