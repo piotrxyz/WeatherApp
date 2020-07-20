@@ -110,7 +110,13 @@ body:before {
 
 .search__results {
   display: flex;
+  flex-direction: column;
   list-style: none; }
+  @media (min-width: 768px) {
+    .search__results {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 630px; } }
 
 img {
   filter: invert(1); }
