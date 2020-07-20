@@ -1,14 +1,14 @@
 # WeatherApp
 
-WeatherApp written in Vanilla JavaScript.
+WeatherApp written in Vanilla JavaScript. Work in progress.
 
 ## Instruction
 
-Accept geolocalization to see current weather in user location.
+Accept geolocalization to see current weather in user location or search by typing desired location in search bar.
 
 ## Live version
 
-Click to see live version of the application: https://piotrxyz.github.io/WeatherApp/
+Current state of the application: https://piotrxyz.github.io/WeatherApp/
 
 ## Built with
 
