@@ -39,7 +39,6 @@ const form = document.querySelector(".app__form");
 const input = document.querySelector(".app__input");
 const msg = document.querySelector(".app__message");
 const list = document.querySelector(".search__results");
-// const city_msg = document.querySelector(".loc-name");
 
 form.addEventListener("submit", e => {
   e.preventDefault();
@@ -55,18 +54,18 @@ form.addEventListener("submit", e => {
       if (inputVal.includes(",")) {
         if (inputVal.split(",")[1].length > 2) {
           inputVal = inputVal.split(",")[0];
-          content = el.querySelector(".loc-name span").textContent.toLowerCase();
+          content = el.querySelector(".loc .loc__name").textContent.toLowerCase();
         } else {
-          content = el.querySelector(".loc-name").dataset.name.toLowerCase();
+          content = el.querySelector(".loc").dataset.name.toLowerCase();
         }
       } else {
-        content = el.querySelector(".loc-name span").textContent.toLowerCase();
+        content = el.querySelector(".loc .loc__name").textContent.toLowerCase();
       }
       return content == inputVal.toLowerCase();
     });
 
     if (filteredArray.length > 0) {
-      msg.textContent = `You already know the weather for ${filteredArray[0].querySelector(".loc-name span").textContent}`;
+      msg.textContent = `You already know the weather for ${filteredArray[0].querySelector(".loc .loc__name").textContent}`;
       form.reset();
       input.focus();
       return;
@@ -83,13 +82,13 @@ form.addEventListener("submit", e => {
       const li = document.createElement("li");
       li.classList.add("city");
       const result = `
-        <h2 class="loc-name" data-name="${name},${sys.country}">
-          <span>${name}</span>
-          <sup>${sys.country}</sup>
+        <h2 class="loc" data-name="${name},${sys.country}">
+          <span class="loc__name">${name}</span>,
+          <span class="loc__country">${sys.country}</span>
         </h2>
-        <div class="loc-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-        <figure>
-          <img class="loc-icon" src="${icon}" alt="${weather[0]["description"]}">
+        <div class="loc__temp">${Math.round(main.temp)}<sup>°C</sup></div>
+        <figure class="loc__description">
+          <img class="loc__icon" src="${icon}" alt="${weather[0]["description"]}">
           <figcaption>${weather[0]["description"]}</figcaption>
         </figure>
       `;

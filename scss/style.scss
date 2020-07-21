@@ -82,6 +82,7 @@ body:before {
 }
 
 .location {
+  position: relative;
   margin-top: 20px;
   background: transparent;
   width: 300px;
@@ -94,7 +95,10 @@ body:before {
   border-radius: 5px;
 
   &__title {
-    text-align: center;
+    position: absolute;
+    top: 10px;
+    align-self: center;
+    font-size: 12px;
   }
 
   &__set {
@@ -129,7 +133,7 @@ body:before {
 }
 
 .city {
-  width: 200px;
+  min-width: 200px;
   height: 250px;
   padding: 10px;
   background-color: rgba(22, 21, 21, 0.2);
@@ -138,6 +142,7 @@ body:before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .search {
@@ -157,4 +162,31 @@ body:before {
 
 img {
   filter: invert(1);
+}
+
+.loc {
+
+  &__name {
+
+  }
+
+  &__country {
+
+  }
+
+  &__temp {
+
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+  }
 }

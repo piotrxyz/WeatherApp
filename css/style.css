@@ -64,6 +64,7 @@ body:before {
   margin-top: 30px; }
 
 .location {
+  position: relative;
   margin-top: 20px;
   background: transparent;
   width: 300px;
@@ -75,7 +76,10 @@ body:before {
   padding: 10px;
   border-radius: 5px; }
   .location__title {
-    text-align: center; }
+    position: absolute;
+    top: 10px;
+    align-self: center;
+    font-size: 12px; }
   .location__set {
     display: flex;
     justify-content: space-around; }
@@ -98,7 +102,7 @@ body:before {
     padding-top: 10px; }
 
 .city {
-  width: 200px;
+  min-width: 200px;
   height: 250px;
   padding: 10px;
   background-color: rgba(22, 21, 21, 0.2);
@@ -106,7 +110,8 @@ body:before {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 .search__results {
   display: flex;
@@ -120,3 +125,13 @@ body:before {
 
 img {
   filter: invert(1); }
+
+.loc__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase; }
+
+.loc__icon {
+  width: 50px;
+  height: 50px; }
