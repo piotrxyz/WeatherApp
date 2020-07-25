@@ -41,7 +41,8 @@ body:before {
     border-radius: 20px;
     width: 300px;
     height: 35px;
-    padding-left: 4%; }
+    padding-left: 4%;
+    font-size: 16px; }
   .app__button {
     background: url(../assets/lens.svg);
     filter: invert(100%);
